@@ -5,12 +5,17 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export PYGAME_HIDE_SUPPORT_PROMPT=1
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="norm"
 
 source $ZSH/oh-my-zsh.sh
 
 plugins=(poetry)
 
 alias time="\time -p"
+alias vtop="vtop -t certs"
 alias ipython="ipython3 --no-banner"
 alias minecraft="java -jar $HOME/.minecraft/tlauncher.jar"
+
+precmd () {
+    rehash
+}
