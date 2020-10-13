@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/User/dawn.tmTheme",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Rust",
+		"Vintage"
+	],
+	"remember_full_screen": true,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

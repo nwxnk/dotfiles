@@ -1,0 +1,14 @@
+{
+	"auto_show_diagnostics_panel": "never",
+	"auto_show_diagnostics_panel_level": 1,
+	"clients":
+	{
+		"rust-analyzer":
+		{
+			"enabled": true
+		}
+	},
+	"log_server": false,
+	"log_stderr": false,
+	"show_diagnostics_severity_level": 1
+}
