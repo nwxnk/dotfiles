@@ -1,20 +1,22 @@
+
 set $mod Mod4
 floating_modifier $mod
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
 
-gaps inner 10
+gaps inner 20
+gaps bottom 40
 
-for_window [class="v*"] floating enable
-for_window [class=".*"] border pixel 6
+for_window [class=".*"] border pixel 0
+for_window [class=".*"] floating enable
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #435861 #435861 #0b2815 #435861   #435861
-client.focused_inactive #9B9081 #9B9081 #0b2815 #9B9081   #9B9081
-client.unfocused        #9B9081 #9B9081 #0b2815 #9B9081   #9B9081
+client.focused          #76849c #76849c #0b2815 #76849c   #76849c
+client.focused_inactive #a89b9e #a89b9e #0b2815 #a89b9e   #a89b9e
+client.unfocused        #a89b9e #a89b9e #0b2815 #a89b9e   #a89b9e
 client.urgent           #cc241d #cc241d #0b2815 #cc241d   #cc241d
-client.placeholder      #9B9081 #9B9081 #0b2815 #9B9081   #9B9081
+client.placeholder      #a89b9e #a89b9e #0b2815 #a89b9e   #a89b9e
 
 set $ws1 "1"
 set $ws2 "2"
@@ -62,6 +64,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -100,11 +105,15 @@ mode "resize" {
 
 exec --no-startup-id picom
 exec --no-startup-id nm-applet
-exec --no-startup-id polybar main
 exec --no-startup-id xfce4-clipman
-exec --no-startup-id optimus-manager-qt
+exec --no-startup-id polybar -rq ws
+exec --no-startup-id polybar -rq tray
+exec --no-startup-id blurwal -m 1 -s 4
 exec --no-startup-id xfce4-volumed-pulse
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id setxkbmap -layout us
-exec --no-startup-id feh --bg-fill /home/nwxnk/Pictures/wall.jpg
+exec --no-startup-id optimus-manager-qt
+exec --no-startup-id feh --bg-scale /home/nwxnk/pictures/wall.png
+exec --no-startup-id xinput set-float-prop "2.4G Mouse" "libinput Accel Speed" -0.6
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 75 --output eDP-1-1 --off
 exec --no-startup-id xinput set-prop "ELAN0511:01 04F3:303F Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"

@@ -7,34 +7,34 @@ cursor:
   style: Underline
 
 font:
-  size: 8
+  size: 9
   normal:
-    family: monofur
+    family: monaco
 
 colors:
   # Default colors
   primary:
-    background: '0x181b20'
-    foreground: '0x9b9081'
+    background: '0x1e1e1e'
+    foreground: '0xc2c7c9'
 
   # Normal colors
   normal:
-    black:   '0x353535'
-    red:     '0x744b40'
-    green:   '0x6d6137'
-    yellow:  '0x765636'
-    blue:    '0x61564b'
-    magenta: '0x6b4a49'
-    cyan:    '0x435861'
-    white:   '0xb3b3b3'
+    black:   '0x011b37'
+    red:     '0xc67a64'
+    green:   '0x42896b'
+    yellow:  '0xd0916a'
+    blue:    '0x3d6c8c'
+    magenta: '0x219093'
+    cyan:    '0x6d8f9e'
+    white:   '0xc2c7c9'
 
   # Bright colors
   bright:
-    black:   '0x5f5f5f'
-    red:     '0x785850'
-    green:   '0x6f6749'
-    yellow:  '0x776049'
-    blue:    '0x696057'
-    magenta: '0x6f5a59'
-    cyan:    '0x525f66'
-    white:   '0xcdcdcd'
+    black:   '0x878b8c'
+    red:     '0xc67a64'
+    green:   '0x42896b'
+    yellow:  '0xd0916a'
+    blue:    '0x3d6c8c'
+    magenta: '0x219093'
+    cyan:    '0x6d8f9e'
+    white:   '0xc2c7c9'

@@ -5,7 +5,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export PYGAME_HIDE_SUPPORT_PROMPT=1
 
-ZSH_THEME="norm"
+ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
