@@ -7,6 +7,8 @@ workspace_auto_back_and_forth yes
 gaps inner 20
 gaps bottom 40
 
+assign [class="zoom"] 5
+
 for_window [class=".*"] border pixel 0
 for_window [class=".*"] floating enable
 
@@ -92,21 +94,21 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'pog?' -B 'lets go' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 exec --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id polybar -rq ws
-exec --no-startup-id polybar -rq tray
+exec --no-startup-id polybar -rq tray 
 exec --no-startup-id blurwal -m 1 -s 4
 exec --no-startup-id xfce4-volumed-pulse
 exec --no-startup-id xfce4-power-manager

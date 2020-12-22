@@ -16,6 +16,4 @@ alias vtop="vtop -t certs"
 alias ipython="ipython3 --no-banner"
 alias minecraft="java -jar $HOME/.minecraft/tlauncher.jar"
 
-precmd () {
-    rehash
-}
+precmd () { rehash }
