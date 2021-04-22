@@ -1,4 +1,4 @@
-export ZSH="/home/nwxnk/.oh-my-zsh"
+export  ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 
@@ -17,3 +17,13 @@ alias ipython="ipython3 --no-banner"
 alias minecraft="java -jar $HOME/.minecraft/tlauncher.jar"
 
 precmd () { rehash }
+
+osu () {
+    pkill picom
+    nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = Off }" > /dev/null
+
+    WINEPREFIX=~/.osu-wine WINEARCH=win32 wine /run/media/nwxnk/.../AppData/Local/osu\!/osu\!.exe
+
+    picom -b
+    nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" > /dev/null
+}
