@@ -1,10 +1,23 @@
 set $mod Mod4
 floating_modifier $mod
 
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
 
 gaps inner 20
+workspace $ws2 gaps inner 0
+workspace $ws2 gaps outer 0
 
 assign [class="zoom"] 5
 
@@ -18,22 +31,11 @@ client.unfocused        #a89b9e #a89b9e #0b2815 #a89b9e   #a89b9e
 client.urgent           #cc241d #cc241d #0b2815 #cc241d   #cc241d
 client.placeholder      #a89b9e #a89b9e #0b2815 #a89b9e   #a89b9e
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
 bindsym $mod+q kill
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+l exec --no-startup-id dm-tool lock
-bindsym $mod+Return exec alacritty
-bindsym $mod+d exec /home/nwxnk/.config/polybar/scripts/launcher.sh
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+d exec --no-startup-id /home/nwxnk/.config/polybar/scripts/launcher.sh
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -103,14 +105,15 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 
-exec --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id xfce4-volumed-pulse
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id optimus-manager-qt
-exec --no-startup-id hsetroot -solid "#406454"
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+# exec --no-startup-id blurwal -m 1 -s 6 -b 7
+exec --no-startup-id hsetroot -solid "#6d9475"
+exec --no-startup-id picom --experimental-backend
+exec --no-startup-id $HOME/.config/polybar/launch.sh se
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 75 --output eDP-1-1 --off
 exec --no-startup-id xinput set-prop "ELAN0511:01 04F3:303F Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-float-prop "ThinkPad Essential Wireless Mouse" "libinput Accel Speed" -0.6

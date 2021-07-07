@@ -1,3 +1,5 @@
+source $ZSH/oh-my-zsh.sh
+
 export  ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -7,28 +9,11 @@ export PYGAME_HIDE_SUPPORT_PROMPT=1
 
 ZSH_THEME="robbyrussell"
 
-source $ZSH/oh-my-zsh.sh
+plugins=(
+    poetry
+)
 
-plugins=(poetry)
-
-alias time="\time -p"
 alias vtop="vtop -t certs"
 alias ipython="ipython3 --no-banner"
-alias minecraft="java -jar $HOME/.minecraft/tlauncher.jar"
 
 precmd () { rehash }
-
-osu () {
-    pkill picom
-    nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = Off }" > /dev/null
-
-    if [ "$1" = "std" ]
-    then
-        WINEPREFIX=~/.osu-wine WINEARCH=win32 wine /run/media/nwxnk/01D6F965B11C18B0/Users/h.kyouma/AppData/Local/osu\!/osu\!.exe
-    else
-        $HOME/.local/bin/osu-lazer
-    fi
-
-    picom -b
-    nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" > /dev/null
-}
